@@ -49,7 +49,7 @@ func uploadFile(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	defer file.Close()
-	dst, err := os.Create(filepath.Join("/files", filepath.Base(handler.Filename)))
+	dst, err := os.Create(filepath.Join("./files", filepath.Base(handler.Filename)))
 
 	// Zwracamy odpowiedź 500, jeśli nie udało się umieścić pliku w /files.
 	if err != nil {
